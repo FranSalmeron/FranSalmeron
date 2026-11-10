@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco J. Salmerón | Software Engineer & AI</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --surface-color: #161b22;
+            --primary-color: #58a6ff;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --border-color: #30363d;
+            --accent-color: #79c0ff;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+
+        /* Header / Hero */
+        header { padding: 8rem 0 4rem; border-bottom: 1px solid var(--border-color); }
+        header h1 { font-size: 3.5rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 0.5rem; color: #ffffff; line-height: 1.1; }
+        header h2 { font-size: 1.5rem; font-weight: 400; color: var(--primary-color); margin-bottom: 1.5rem; }
+        .hero-text { font-size: 1.1rem; color: var(--text-muted); max-width: 800px; margin-bottom: 2.5rem; }
+        
+        .social-links { display: flex; gap: 1.5rem; }
+        .social-links a {
+            display: flex; align-items: center; gap: 0.5rem;
+            color: var(--text-main); text-decoration: none; font-weight: 500;
+            padding: 0.5rem 1rem; border: 1px solid var(--border-color); border-radius: 6px;
+            background: var(--surface-color); transition: all 0.2s ease;
+        }
+        .social-links a:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+        /* Sections */
+        section { padding: 5rem 0; border-bottom: 1px solid var(--border-color); }
+        .section-title { font-size: 1.8rem; font-weight: 600; margin-bottom: 3rem; color: #ffffff; }
+
+        /* Projects Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        
+        .card {
+            background-color: var(--surface-color); border: 1px solid var(--border-color);
+            border-radius: 10px; padding: 2.5rem; transition: transform 0.2s ease, border-color 0.2s ease;
+            display: flex; flex-direction: column;
+        }
+        .card:hover { border-color: var(--primary-color); }
+        .card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: #ffffff; }
+        .card .meta { font-size: 0.85rem; color: var(--primary-color); margin-bottom: 1.5rem; font-family: monospace; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
+        
+        /* Tags */
+        .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .tag {
+            background-color: rgba(88, 166, 255, 0.1); color: var(--accent-color);
+            padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+
+        /* Experience Timeline */
+        .timeline { position: relative; border-left: 2px solid var(--border-color); padding-left: 2rem; margin-left: 1rem; }
+        .timeline-item { margin-bottom: 3rem; position: relative; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -2.4rem; top: 0.4rem;
+            width: 12px; height: 12px; border-radius: 50%; background: var(--primary-color);
+            box-shadow: 0 0 0 4px var(--bg-color);
+        }
+        .timeline-title { font-size: 1.25rem; font-weight: 600; color: #ffffff; }
+        .timeline-company { font-size: 1rem; color: var(--text-muted); margin-bottom: 1rem; font-weight: 500; }
+        .timeline-desc { font-size: 0.95rem; color: var(--text-muted); }
+
+        /* Skills Setup */
+        .skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .skill-group h4 { color: #ffffff; margin-bottom: 1rem; font-size: 1.1rem; }
+        .skill-group ul { list-style: none; color: var(--text-muted); }
+        .skill-group ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; font-size: 0.95rem; }
+        .skill-group ul li::before { content: "▹"; position: absolute; left: 0; color: var(--primary-color); }
+
+        footer { padding: 4rem 0; text-align: center; color: var(--text-muted); font-size: 0.85rem; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .card { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Francisco J. Salmerón</h1>
+            <h2>Software Engineer | IA & Big Data</h2>
+            <p class="hero-text">
+                Especializado en el desarrollo de aplicaciones web escalables, arquitecturas distribuidas y la integración de modelos de Inteligencia Artificial. Apasionado por la automatización de procesos, la gestión eficiente de datos y la creación de soluciones tecnológicas robustas en entornos productivos.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/FranSalmeron" target="_blank">
+                    <svg height="24" viewBox="0 0 16 16" width="24" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.46-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/francisco-jos%C3%A9-salmer%C3%B3n-puig-2181422b4/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </header>
+
+        <section id="projects">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Diet-IA | Nutrición Inteligente</h3>
+                    <div class="meta">Big Data & Inteligencia Artificial</div>
+                    <p>Plataforma web y móvil enfocada en la recomendación personalizada de recetas. El núcleo del sistema integra dos modelos IA: un motor de recomendación y un modelo NLP (NER) para la extracción automatizada de ingredientes. Orquestación y despliegue basados en arquitecturas de Big Data.</p>
+                    <div class="tags">
+                        <span class="tag">Hadoop</span>
+                        <span class="tag">Kubernetes</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">React Native (Expo)</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>AutoTrade Web</h3>
+                    <div class="meta">Arquitectura Full-Stack</div>
+                    <p>Plataforma e-commerce transaccional para la automoción. Implementación de una arquitectura cliente-servidor robusta, dividiendo el ciclo de vida en entornos de desarrollo y producción estables alojados en Railway. Despliegue optimizado mediante contenedores y proxy inverso.</p>
+                    <div class="tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Symfony (PHP)</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Nginx</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Experiencia Profesional</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Game Developer & Web Engineer</h3>
+                    <div class="timeline-company">Masion Games Feel | 2024 - 2025</div>
+                    <p class="timeline-desc">
+                        Desarrollo de lógicas de juego y sistemas interactivos utilizando C# en Unity. Colaboré en el diseño de niveles, creación de assets (sprites, animaciones) y ejecución de pruebas de calidad (QA). Paralelamente, gestioné el mantenimiento y optimización del portal web corporativo, asegurando alto rendimiento y estabilidad.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <h3 class="timeline-title">Técnico de Sistemas e Infraestructura</h3>
+                    <div class="timeline-company">Universidad de Granada (UGR) | 2023</div>
+                    <p class="timeline-desc">
+                        Soporte técnico avanzado en hardware y software para la infraestructura tecnológica universitaria. Diagnóstico de fallos, reparación de equipos de laboratorio y despliegue de soluciones informáticas para garantizar la operatividad de los sistemas académicos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Tecnologías & Competencias</h2>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <h4>Cloud & DevOps</h4>
+                    <ul>
+                        <li>Docker / Docker Desktop</li>
+                        <li>Kubernetes</li>
+                        <li>Amazon Web Services (AWS)</li>
+                        <li>Nginx & VirtualBox</li>
+                        <li>Certificaciones Cisco en Linux y Redes</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Data & Inteligencia Artificial</h4>
+                    <ul>
+                        <li>Python & RStudio</li>
+                        <li>Ecosistema Hadoop</li>
+                        <li>Modelos NER (Procesamiento del Lenguaje)</li>
+                        <li>Sistemas de Recomendación ML</li>
+                        <li>Bases de datos NoSQL (MongoDB)</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4>Desarrollo de Software</h4>
+                    <ul>
+                        <li>React & React Native (Expo)</li>
+                        <li>Symfony (PHP) & MySQL</li>
+                        <li>C# & Unity Engine</li>
+                        <li>Automatización: n8n, Power Automate</li>
+                        <li>Control de Versiones (Git/GitHub)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Francisco J. Salmerón. Diseñado con enfoque profesional y arquitectura limpia.</p>
+        </footer>
+    </div>
+</body>
+</html>
